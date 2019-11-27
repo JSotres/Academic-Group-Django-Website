@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+  
+  <div class="row">
+    <h1>Publications</h1>
+  </div>
+
+  {% if view.paperslists %}
+  <div class="row">
+    <h2>Refereed Full Papers</h2>
+  </div>
+  <div class="row">
+    <ol>
+      {% for paper in view.paperslists %}
+      <li>
+	{{ paper.authors}} <strong>{{ paper.year}}</strong>. {{ paper.title}}. <i> {{ paper.journal}}</i> {{ paper.volume}}: {{ paper.initialPage}}.
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+  {% endif %}
+
+  {% if view.paperslists %}
+  <div class="row">
+    <h2>Reviews</h2>
+  </div>
+  <div class="row">       
+    <ol>
+      {% for review in view.reviewslists %}
+      <li>
+	{{ review.authors}} <strong>{{ review.year}}</strong>. {{ review.title}}. <i> {{ review.journal}}</i> {{ review.volume}}: {{ review.initialPage}}.
+      </li>
+      {% endfor %}
+    </ol>    
+  </div>
+  {% endif %}
+
+  {% if view.chapterslists %}
+  <div class="row">
+    <h2>Book Chapters</h2>
+  </div>
+  <div class="row">       
+    <ol>
+      {% for chapter in view.chapterslists %}
+      <li>
+	{{ chapter.authors}} <strong>{{ chapter.year}}</strong>. {{ chapter.title}}. <i> {{ chapter.journal}}</i> {{ chapter.volume}}: {{ chapter.initialPage}}.
+      </li>
+      {% endfor %}
+    </ol>    
+  </div>
+  {% endif %}
+
+  {% if view.proceedingslists %}
+  <div class="row">
+    <h2>Conference Proceedings</h2>
+  </div>
+  <div class="row">       
+    <ol>
+      {% for proceeding in view.chapterslists %}
+      <li>
+	{{ proceeding.authors}} <strong>{{ proceeding.year}}</strong>. {{ proceeding.title}}. <i> {{ proceeding.journal}}</i> {{ proceeding.volume}}: {{ proceeding.initialPage}}.
+      </li>
+      {% endfor %}
+    </ol>    
+  </div>
+  {% endif %}
+  
+    
+
+{% endblock content %}

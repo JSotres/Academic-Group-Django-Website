@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <h1>Members</h1>
+  </div>
+  
+  <div class="row">
+    <ul>
+      {% for currentmember in view.currentmemberslist %}
+      {% if currentmember.position == 'PI' %}
+      <li>{{ currentmember.name}}, {{ currentmember.position }}</li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+
+  {% if view.currentpostdocs %}
+  <h3>Postdocs</h3>
+  <div class="row">      
+    <ul>
+      {% for member in view.currentpostdocs %}
+      <li>
+	{{ member.name}}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  
+  {% if view.currentphds %}
+  <h3>PhD Students</h3>
+  <div class="row">
+    <ul>
+      {% for member in view.currentphds %}
+      <li>
+	{{ member.name}}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if view.currenttechnicians %}
+  <h3>Technical Staff</h3>
+  <div class="row">
+    <ul>
+      {% for member in view.currenttechnicians %}
+      <li>
+	{{ member.name}}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if view.currentmasterstudents %}
+  <h3>Master Students</h3>
+  <div class="row">
+    <ul>
+      {% for member in view.currentmasterstudents %}
+      <li>
+	{{ member.name}}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if view.currentguestphdstudents %}
+  <h3>Guest PhD Students</h3>
+  <div class="row">
+    <ul>
+      {% for member in view.currentguestphdstudents %}
+      <li>
+	{{ member.name}}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if view.currentgueststudents %}
+  <h3>Guest Students</h3>
+  <div class="row">
+    <ul>
+      {% for member in view.currentgueststudents %}
+      <li>
+	{{ member.name}}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  
+  {% if view.previousmemberslist %}
+
+  <div class="row">
+    <h2>Previous Members</h2>
+  </div>
+
+  {% if view.previouspostdocs %}
+  <h3>Postdocs</h3>
+  <div class="row">      
+    <ul>
+      {% for member in view.previouspostdocs %}
+      <li>
+	{{ member.name}}, {{ member.position }}, {{member.initial_year}}
+	{% if member.initial_year != member.final_year%}
+	- {{member.final_year}}
+	{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  
+  {% if view.previousphds %}
+  <h3>PhD Students</h3>
+  <div class="row">
+    <ul>
+      {% for member in view.previousphds %}
+      <li>
+	{{ member.name}}, {{ member.position }}, {{member.initial_year}}
+	{% if member.initial_year != member.final_year%}
+	- {{member.final_year}}
+	{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if view.previoustechnicians %}
+  <h3>Technical Staff</h3>
+  <div class="row">
+    <ul>
+      {% for member in view.previoustechnicians %}
+      <li>
+	{{ member.name}}, {{ member.position }}, {{member.initial_year}}
+	{% if member.initial_year != member.final_year%}
+	- {{member.final_year}}
+	{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if view.previousmasterstudents %}
+  <h3>Master Students</h3>
+  <div class="row">
+    <ul>
+      {% for member in view.previousmasterstudents %}
+      <li>
+	{{ member.name}}, Master Student, {{member.initial_year}}
+	{% if member.initial_year != member.final_year%}
+	- {{member.final_year}}
+	{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if view.previousguestphdstudents %}
+  <h3>Guest PhD Students</h3>
+  <div class="row">
+    <ul>
+      {% for member in view.previousguestphdstudents %}
+      <li>
+	{{ member.name}}, Guest PhD Student, {{member.initial_year}}
+	{% if member.initial_year != member.final_year%}
+	- {{member.final_year}}
+	{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if view.previousgueststudents %}
+  <h3>Guest Students</h3>
+  <div class="row">
+    <ul>
+      {% for member in view.previousgueststudents %}
+      <li>
+	{{ member.name}}, Guest Student, {{member.initial_year}}
+	{% if member.initial_year != member.final_year%}
+	- {{member.final_year}}
+	{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+
+  
+  {% endif %}
+  
+
+</div>
+<div class="container">
+  <hr>
+  <hr>
+</div>
+
+
+{% endblock content %}
