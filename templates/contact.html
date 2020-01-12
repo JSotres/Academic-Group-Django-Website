@@ -2,7 +2,12 @@
 {% block content %}
 
 <div class="container">
-  <h1>Please use the form below to contact us</h1>
+  <div class="row  justify-content-around align-items-center mt-5 mb-5">
+    <h1>Please use the form below to contact us</h1>
+  </div>
+</div>
+
+<div class="container">    
   <form action="" method="post">
     {% csrf_token %}
     {{ form.as_p }}

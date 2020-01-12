@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="container">
+  <div class="row  justify-content-around align-items-center mt-5">
+    <h1>{{ object.topic }}</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row  justify-content-around align-items-center mb-5">
+    <img src="{{ object.main_image.url }}" class="card-img-top" alt="{{ object.topic }}" style="width: 25rem;">
+  </div>
+</div>
+
+<div class="container">
+  <div class="row  justify-content-around align-items-center mb-5">
+    <p>{{ object.long_description }}</p>
+  </div>
+</div>
+
+
+{% endblock content %}

@@ -7,25 +7,40 @@
   </div>
   
   <div class="row">
-    <ul>
-      {% for currentmember in view.currentmemberslist %}
-      {% if currentmember.position == 'PI' %}
-      <li>{{ currentmember.name}}, {{ currentmember.position }}</li>
-      {% endif %}
-      {% endfor %}
-    </ul>
+    <h3>Group Leader</h3>
+  </div>
+  <div class="row">
+    {% for currentmember in view.currentmemberslist %}
+    {% if currentmember.position == 'PI' %}    
+    <div class="col mb-5">
+      <div class="card text-center" style="width: 18rem;">
+	<img src="{{ currentmember.main_image.url }}" class="card-img-top" alt="{{ currentmember.name }}" style="width: 12rem;">
+	<div class="card-body">
+	  <h5 class="card-title">{{ currentmember.name}}</h5>
+	  <a href="#" class="btn btn-primary">Contact</a>
+	</div>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
   </div>
 
   {% if view.currentpostdocs %}
-  <h3>Postdocs</h3>
+  <div class="row">
+    <h3>Postdocs</h3>
+  </div>
   <div class="row">      
-    <ul>
-      {% for member in view.currentpostdocs %}
-      <li>
-	{{ member.name}}
-      </li>
-      {% endfor %}
-    </ul>
+    {% for currentmember in view.currentpostdocs %}
+    <div class="col mb-5">
+      <div class="card text-center" style="width: 18rem;">
+	<img src="{{ currentmember.main_image.url }}" class="card-img-top" alt="{{ currentmember.name }}" style="width: 12rem;">
+	<div class="card-body">
+	  <h5 class="card-title">{{ currentmember.name}}</h5>
+	  <a href="#" class="btn btn-primary">Contact</a>
+	</div>
+      </div>
+    </div>
+    {% endfor %}
   </div>
   {% endif %}
   
@@ -200,12 +215,6 @@
   
   {% endif %}
   
-
-</div>
-<div class="container">
-  <hr>
-  <hr>
-</div>
 
 
 {% endblock content %}

@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, CreateView, ListView
-from .models import ContactRequest, Publications, Member, GroupInformation
+from django.views.generic import TemplateView, CreateView, ListView, DetailView
+from .models import ContactRequest, Publications, Member, GroupInformation, ResearchField
 
 
 class HomePageView(TemplateView):
@@ -13,6 +13,9 @@ class HomePageView(TemplateView):
 class PublicationsListPageView(ListView):
     model = Publications
     template_name = 'publications2.html'
+
+    def group_information_list(self):
+        return GroupInformation.objects.get(pk=1)
 
     def paperslists(self):
         return Publications.objects.filter(
@@ -34,9 +37,15 @@ class PublicationsListPageView(ListView):
 class MembersPageView(TemplateView):
     template_name = 'members.html'
 
+    def group_information_list(self):
+        return GroupInformation.objects.get(pk=1)
+
     def currentmemberslist(self):
         return Member.objects.filter(
             final_year=0)
+
+    def currentPI(self):
+        return GroupInformation.objects.get(pk=1)
 
     def currentpostdocs(self):
         return Member.objects.filter(final_year=0, position='Postdoc')
@@ -78,8 +87,20 @@ class MembersPageView(TemplateView):
         return Member.objects.exclude(final_year=0).filter(position='Guest_Student').order_by('-initial_year')
 
 
-class ResearchPageView(TemplateView):
-    template_name = 'research.html'
+class ResearchPageView(ListView):
+    model = ResearchField
+    template_name = 'research3.html'
+
+    def group_information_list(self):
+        return GroupInformation.objects.get(pk=1)
+
+
+class ResearchFieldView(DetailView):
+    model = ResearchField
+    template_name = 'researchfield.html'
+
+    def group_information_list(self):
+        return GroupInformation.objects.get(pk=1)
 
 
 class ContactPageView(CreateView):
@@ -87,6 +108,12 @@ class ContactPageView(CreateView):
     template_name = 'contact.html'
     fields = '__all__'
 
+    def group_information_list(self):
+        return GroupInformation.objects.get(pk=1)
+
 
 class RequestReceivedPageView(TemplateView):
     template_name = 'request_received.html'
+
+    def group_information_list(self):
+        return GroupInformation.objects.get(pk=1)
