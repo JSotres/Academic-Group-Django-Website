@@ -85,58 +85,95 @@
     {% endfor %}
   </div>
   {% endif %}
-  
+
   {% if view.currenttechnicians %}
-  <h3>Technical Staff</h3>
-  <div class="row">
-    <ul>
-      {% for member in view.currenttechnicians %}
-      <li>
-	{{ member.name}}
-      </li>
-      {% endfor %}
-    </ul>
+  <div class="row justify-content-md-center pt-4 pb-2">
+    <h3>Technical Staff</h3>
+  </div>
+  <div class="row justify-content-md-center">
+    {% for currentmember in view.currenttechnicians %}
+    <div class="col-md-auto">
+      <div class="card text-center" style="width: 14rem;">
+	<div class"row">
+	  <img src="{{ currentmember.main_image.url }}" class="card-img-top" alt="{{ currentmember.name }}" style="width: 12rem;">
+	</div>
+	
+	<div class="card-body">
+	  <h5 class="card-title">{{ currentmember.name }}</h5>
+	  <a href="#" class="btn btn-secondary">Contact</a>
+	</div>
+      </div>
+    </div>
+    {% endfor %}
   </div>
   {% endif %}
 
   {% if view.currentmasterstudents %}
-  <h3>Master Students</h3>
-  <div class="row">
-    <ul>
-      {% for member in view.currentmasterstudents %}
-      <li>
-	{{ member.name}}
-      </li>
-      {% endfor %}
-    </ul>
+  <div class="row justify-content-md-center pt-4 pb-2">
+    <h3>Master Students</h3>
+  </div>
+  <div class="row justify-content-md-center">
+    {% for currentmember in view.currentmasterstudents %}
+    <div class="col-md-auto">
+      <div class="card text-center" style="width: 14rem;">
+	<div class"row">
+	  <img src="{{ currentmember.main_image.url }}" class="card-img-top" alt="{{ currentmember.name }}" style="width: 12rem;">
+	</div>
+	
+	<div class="card-body">
+	  <h5 class="card-title">{{ currentmember.name }}</h5>
+	  <a href="#" class="btn btn-secondary">Contact</a>
+	</div>
+      </div>
+    </div>
+    {% endfor %}
   </div>
   {% endif %}
 
   {% if view.currentguestphdstudents %}
-  <h3>Guest PhD Students</h3>
-  <div class="row">
-    <ul>
-      {% for member in view.currentguestphdstudents %}
-      <li>
-	{{ member.name}}
-      </li>
-      {% endfor %}
-    </ul>
+  <div class="row justify-content-md-center pt-4 pb-2">
+    <h3>Guest PhD Students</h3>
+  </div>
+  <div class="row justify-content-md-center">
+    {% for currentmember in view.currentguestphdstudents %}
+    <div class="col-md-auto">
+      <div class="card text-center" style="width: 14rem;">
+	<div class"row">
+	  <img src="{{ currentmember.main_image.url }}" class="card-img-top" alt="{{ currentmember.name }}" style="width: 12rem;">
+	</div>
+	
+	<div class="card-body">
+	  <h5 class="card-title">{{ currentmember.name }}</h5>
+	  <a href="#" class="btn btn-secondary">Contact</a>
+	</div>
+      </div>
+    </div>
+    {% endfor %}
   </div>
   {% endif %}
 
   {% if view.currentgueststudents %}
-  <h3>Guest Students</h3>
-  <div class="row">
-    <ul>
-      {% for member in view.currentgueststudents %}
-      <li>
-	{{ member.name}}
-      </li>
-      {% endfor %}
-    </ul>
+  <div class="row justify-content-md-center pt-4 pb-2">
+    <h3>Guest Students</h3>
+  </div>
+  <div class="row justify-content-md-center">
+    {% for currentmember in view.currentgueststudents %}
+    <div class="col-md-auto">
+      <div class="card text-center" style="width: 14rem;">
+	<div class"row">
+	  <img src="{{ currentmember.main_image.url }}" class="card-img-top" alt="{{ currentmember.name }}" style="width: 12rem;">
+	</div>
+	
+	<div class="card-body">
+	  <h5 class="card-title">{{ currentmember.name }}</h5>
+	  <a href="#" class="btn btn-secondary">Contact</a>
+	</div>
+      </div>
+    </div>
+    {% endfor %}
   </div>
   {% endif %}
+  
   
   {% if view.previousmemberslist %}
 
