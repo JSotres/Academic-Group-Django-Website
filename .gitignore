@@ -3,5 +3,6 @@
 db.sqlite3
 Pipfile
 Pipfile.lock
-media/*
+media/members_images/*
+media/research_field_images/*
 static/*
