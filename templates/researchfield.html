@@ -2,12 +2,29 @@
 {% load static %}
 {% block content %}
 
+<header class="jumbotron jumbotron-fluid bg-white text-black text-center">
+  <div class="container pt-5 d-flex align-items-center flex-column">
+    <!-- Heading -->
+    <h1 class="display-4">{{ object.topic }}</h1>
+    <!-- Icon Divider -->
+    <div class="row">
+      <div class="col"><hr class="custom-divider2"></div>
+      <div class="col-auto">
+	<i class="fas fa-align-justify"></i>
+      </div>
+      <div class="col"><hr class="custom-divider2"></div>
+    </div>
+    
+  </div>
+</header>
 
 <div class="container">
-  <div class="row  justify-content-around align-items-center mt-5">
-    <h1>{{ object.topic }}</h1>
+  <div class="row  justify-content-around align-items-center mb-5">
+    <p>{{ object.long_description }}</p>
   </div>
 </div>
+
+
 
 <div class="container">
   <div class="row  justify-content-around align-items-center mb-5">
@@ -15,11 +32,7 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="row  justify-content-around align-items-center mb-5">
-    <p>{{ object.long_description }}</p>
-  </div>
-</div>
+
 
 
 {% endblock content %}

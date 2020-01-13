@@ -2,11 +2,25 @@
 {% load static %}
 {% block content %}
 
+<header class="jumbotron jumbotron-fluid bg-white text-black text-center">
+  <div class="container pt-5 d-flex align-items-center flex-column">
+    <!-- Heading -->
+    <h1 class="display-4">Research Directions</h1>
+    <!-- Icon Divider -->
+    <div class="row">
+      <div class="col"><hr class="custom-divider2"></div>
+      <div class="col-auto">
+	<i class="fas fa-align-justify"></i>
+      </div>
+      <div class="col"><hr class="custom-divider2"></div>
+    </div>
+    
+  </div>
+</header>
+
+
 
 <div class="container">
-  <div class="row  justify-content-around align-items-center mt-5 mb-5">
-    <h1>Research Directions</h1>
-  </div>
 
   <div class="row align-items-center justify-content-end mb-5">
 
@@ -18,7 +32,7 @@
 	<div class="card-body">
 	  <h5 class="card-title">{{ field.topic }}</h5>
 	  <p class="card-text">{{ field.short_description }}</p>
-	  <a href="{% url 'researchfield' field.pk %}" class="btn btn-primary">Read more</a>
+	  <a href="{% url 'researchfield' field.pk %}" class="btn btn-secondary">Read more</a>
 	</div>
       </div>
     </div>

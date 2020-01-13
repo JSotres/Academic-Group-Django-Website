@@ -1,13 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="jumbotron">
-  <h1 class="display-4">{{ view.group_information_list.group_name}} {{view.group_information_list.group_def}}</h1>
-  <p class="lead">{{ view.group_information_list.PI_name }}, {{ view.group_information_list.PI_position }}</p>
-  <hr class="my-4">
-  <p>{{ view.group_information_list.group_long_description }}</p>
-  <a class="btn btn-primary btn-lg" href="{% url 'research' %}" role="button">Learn more</a>
-</div>
+
+<header class="jumbotron jumbotron-fluid bg-white text-black text-center">
+  <div class="container p-5 d-flex align-items-center flex-column">
+    <!-- Heading -->
+    <h1 class="display-4">{{ view.group_information_list.group_name}} {{view.group_information_list.group_def}}</h1>
+    <!-- Icon Divider -->
+    <div class="row p-2">
+      <div class="col"><hr class="custom-divider2"></div>
+      <div class="col-auto">
+	<i class="fas fa-align-justify"></i>
+      </div>
+      <div class="col"><hr class="custom-divider2"></div>
+    </div>
+    
+    <!-- Subheading -->
+    <p class="lead">{{ view.group_information_list.PI_name }}, {{ view.group_information_list.PI_position }}</p>
+    <hr class="my-4">
+    <p>{{ view.group_information_list.group_long_description }}</p>
+    <a class="btn btn-secondary btn-lg" href="{% url 'research' %}" role="button">Learn more</a>
+  </div>
+</header>
+
 
 
 {% endblock content %}

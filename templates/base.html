@@ -6,40 +6,77 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/navbar-fixed/">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+      body {
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      }
+
+      hr.custom-divider2 {
+          border: 2px solid black;
+      width: 4rem;
+      margin-left: -1rem;
+      margin-right: -1rem;
+      }
+
+      .main {
+      flex: 1;
+      }
+
+      .footer {
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 100%;
+      max-height: 50px;
+      min-height: 50px;
+}
+
+
+    </style>
 
     <title>{{ view.group_information_list.group_name}}</title>
 
   </head>
   
-  <body>
-    <nav class="navbar navbar-expand-md navbar-dark  fixed-top bg-primary">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-	<span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-	<ul class="navbar-nav mr-auto">
-	  <li class="nav-item active">
-	    <a class="nav-link" href="{% url 'home' %}">Home</a>
-	  </li>
-	  <li class="nav-item active">
-	    <a class="nav-link" href="{% url 'research' %}">Research</a>
-	  </li>
-	  <li class="nav-item active">
-	    <a class="nav-link" href="{% url 'publications' %}">Publications</a>
-	  </li>
-	  <li class="nav-item active">
-	    <a class="nav-link" href="{% url 'members' %}">Members</a>
-	  </li>
-	  <li class="nav-item active">
-	    <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-	  </li>
-	</ul>
-      </div>
-    </nav>
+  <body id="page-top">
 
+    <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-secondary text-uppercase fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="#page-top"><strong>{{ view.group_information_list.group_name}} Group</strong></a>
+      <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'home' %}"><strong>Home</strong></a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'research' %}"><strong>Research</strong></a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'publications' %}"><strong>Publications</strong></a>
+          </li>
+          <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'members' %}"><strong>Members</strong></a>
+          </li>
+	  <li class="nav-item mx-0 mx-lg-1">
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'contact' %}"><strong>Contact</strong></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    
     {% block content %}
     {% endblock content %}
 
@@ -51,15 +88,18 @@
     <!-- Footer Nav Bar-->
     <nav class="navbar fixed-bottom navbar-expand-sm navbar-light bg-light">
       <div class = "container">
-	<p class = "navbar-text"> © Copyright: {{ view.group_information_list.PI_name }}</p>
-
+	<div class="row justify-content-md-center align-items-center">
+	  <p class = "navbar-text"> © Copyright: {{ view.group_information_list.PI_name }}</p>
+	</div>
       </div>
     </nav>
 
 
     <!-- Optional JavaScript -->
+    <script src="https://kit.fontawesome.com/5b065ebd60.js" crossorigin="anonymous"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
+</html>

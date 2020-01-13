@@ -12,7 +12,7 @@ class HomePageView(TemplateView):
 
 class PublicationsListPageView(ListView):
     model = Publications
-    template_name = 'publications2.html'
+    template_name = 'publications.html'
 
     def group_information_list(self):
         return GroupInformation.objects.get(pk=1)
@@ -89,7 +89,7 @@ class MembersPageView(TemplateView):
 
 class ResearchPageView(ListView):
     model = ResearchField
-    template_name = 'research3.html'
+    template_name = 'research.html'
 
     def group_information_list(self):
         return GroupInformation.objects.get(pk=1)
