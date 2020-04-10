@@ -31,7 +31,6 @@
 	<img src="{{ field.main_image.url }}" class="card-img-top" alt="{{ field.topic }}" width="100%" height="225">
 	<div class="card-body">
 	  <h5 class="card-title">{{ field.topic }}</h5>
-	  <p class="card-text">{{ field.short_description }}</p>
 	  <a href="{% url 'researchfield' field.pk %}" class="btn btn-secondary">Read more</a>
 	</div>
       </div>

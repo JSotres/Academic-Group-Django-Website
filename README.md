@@ -1,6 +1,8 @@
 # Academic-Group-Django-Website
 
-Example of an academic group website built with Django where specific data of the academic group is manged entirely from the admin site and then delivered to the html templates
+Django project for a typical academic where specific data of the academic group is manged entirely from the admin site and then delivered to the html templates.
+
+I have used it to build my [group's website](www.jsotres.com) so you can make an idea of how it looks like.
 
 ## Introduction
 
@@ -25,8 +27,10 @@ Additionally, the web contains a form that a viewer can use to contact the acade
 
 5. **ContactRequest**. Fields: title, text, contact_info
 
-The current version only runs from the Django development server. If you wish to deploy it in a production server, contact me.
+## Use
+
+I will upload information on how to use (and deploy) the project as soon as I have time. Mean while, if you are intersted in using the code to build your own academic group website, just contact me.
 
 ## Contributors
 
-[Javier Sotres](https://www.mah.se/sotres)
+[Javier Sotres](www.jsotres.com)
