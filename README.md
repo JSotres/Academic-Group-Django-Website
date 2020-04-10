@@ -2,7 +2,7 @@
 
 Django project for a typical academic where specific data of the academic group is manged entirely from the admin site and then delivered to the html templates.
 
-I have used it to build my [group's website](www.jsotres.com) so you can make an idea of how it looks like.
+I have used it to build my [group's website](http://www.jsotres.com) so you can make an idea of how it looks like.
 
 ## Introduction
 
@@ -33,4 +33,4 @@ I will upload information on how to use (and deploy) the project as soon as I ha
 
 ## Contributors
 
-[Javier Sotres](www.jsotres.com)
+[Javier Sotres](http://www.jsotres.com)
