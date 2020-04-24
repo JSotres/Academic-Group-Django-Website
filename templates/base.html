@@ -5,38 +5,35 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <meta name="keywords" content="Sotres, Javier, AFM, Physics, Malmo, Malmoe, Sensor, Wireless">
+    <meta name="author" content="Javier Sotres">
+    <!-- googleapis -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="{% static "tinymce/css/prism.css" %}" rel="stylesheet">
 
     <style>
+
       body {
-      font-family: 'Montserrat', sans-serif;
-      display: flex;
-      min-height: 100vh;
-      flex-direction: column;
+        font-family: 'Montserrat', sans-serif;
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
       }
 
       hr.custom-divider2 {
-          border: 2px solid black;
-      width: 4rem;
-      margin-left: -1rem;
-      margin-right: -1rem;
+        border: 2px solid black;
+        width: 4rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
       }
 
       .main {
-      flex: 1;
+        flex: 1;
       }
 
-      .footer {
-      background-position: center center;
-      background-repeat: no-repeat;
-      width: 100%;
-      max-height: 50px;
-      min-height: 50px;
-}
+      
 
 
     </style>
@@ -49,8 +46,8 @@
 
     <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-secondary text-uppercase fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand" href="#page-top"><strong>{{ view.group_information_list.group_name}} Lab</strong></a>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#page-top"><strong>{{ view.group_information_list.group_name}}</strong></a>
       <button class="navbar-toggler navbar-toggler-right text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         Menu
         <i class="fas fa-bars"></i>
@@ -67,9 +64,9 @@
             <a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'publications' %}"><strong>Publications</strong></a>
           </li>
           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'members' %}"><strong>Members</strong></a>
+            <a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'members' %}"><strong>Group</strong></a>
           </li>
-	  <li class="nav-item mx-0 mx-lg-1">
+          <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'contact' %}"><strong>Contact</strong></a>
           </li>
         </ul>
@@ -77,23 +74,37 @@
     </div>
   </nav>
 
-    
-    {% block content %}
-    {% endblock content %}
 
-    <div class="container">
-      <hr>
-      <hr>
-    </div>
+  {% block content %}
+  {% endblock content %}
 
-    <!-- Footer Nav Bar-->
-    <nav class="navbar fixed-bottom navbar-expand-sm navbar-light bg-light">
-      <div class = "container">
-	<div class="row justify-content-md-center align-items-center">
-	  <p class = "navbar-text"> © Copyright: {{ view.group_information_list.PI_name }}</p>
-	</div>
+  <footer>
+  <div class="container-fluid padding">
+    <div class="row text-center">
+      <div class="col-md-6">
+        <img src="{% static 'images/MaU.png' %}" alt="" width="150rem" class="img-fluid">
       </div>
-    </nav>
+
+      <div class="col-md-6">
+        <hr>
+        <h5>Address</h5>
+        <hr>
+        <p>Biomedical Science Department</p>
+        <p>Malmö University</p>
+        <p>Per Albin hanssons Väg 35</p>
+        <p>21432, Malmö, Sweden</p>
+      </div>
+
+      
+    </div>
+    <div class="row text-center">
+      <div class="col-12">
+        <p> © Copyright: {{ view.group_information_list.PI_name }}</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
 
 
     <!-- Optional JavaScript -->
