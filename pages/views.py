@@ -87,6 +87,14 @@ class MembersPageView(TemplateView):
         return Member.objects.exclude(final_year=0).filter(position='Guest_Student').order_by('-initial_year')
 
 
+class MembersDetailView(DetailView):
+    model = Member
+    template_name = 'memberdetail.html'
+
+    def group_information_list(self):
+        return GroupInformation.objects.get(pk=1)
+
+
 class ResearchPageView(ListView):
     model = ResearchField
     template_name = 'research.html'

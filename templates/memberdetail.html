@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<header class="jumbotron jumbotron-fluid bg-white text-black text-center pb-0">
+  <div class="container pt-5 d-flex align-items-center flex-column">
+    <!-- Heading -->
+    <h1 class="display-4">{{ object.name }}</h1>
+    
+  </div>
+</header>
+
+<div class="container-fluid pl-5 pr-5 pb-3">
+  <div class="row align-items-center">
+  	<div class="col-md-8">
+    	<p>{{ object.bio|safe }}</p>
+    </div>
+    <div class="col-md-4 text-center">
+    	<img src="{{ object.main_image.url }}" class="img-fluid">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock content %}
