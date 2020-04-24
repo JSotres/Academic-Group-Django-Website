@@ -14,6 +14,7 @@ class GroupInformation(models.Model):
     group_long_description = models.TextField(
         default='We do research on...')
 
+
     def __str__(self):
         return self.group_name
 
@@ -70,6 +71,7 @@ class Member(models.Model):
     main_image = models.ImageField(
         upload_to='members_images', blank=True)
     email = models.EmailField(max_length=70, blank=True)
+    bio = models.TextField(blank=True, default='Coming Soon')
 
     def __str__(self):
         return '%s %s' % (self.name, str(self.initial_year))

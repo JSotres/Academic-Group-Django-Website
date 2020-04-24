@@ -10,6 +10,9 @@ class PublicationsAdmin(admin.ModelAdmin):
 
 class MembersAdmin(admin.ModelAdmin):
     ordering = ['-initial_year']
+    formfield_overrides = {
+        models.TextField: {'widget': TinyMCE()},
+        }
 
 
 class ResearchFieldAdmin(admin.ModelAdmin):
