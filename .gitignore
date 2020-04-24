@@ -10,3 +10,5 @@ settings/config.json
 statictoot/*
 my_environment
 Academic.zip
+pages/__pycache__/*
+pages/migrations/__pycache__

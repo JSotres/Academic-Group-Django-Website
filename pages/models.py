@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from model_utils import Choices
+from tinymce import models as tinymce_models
 
 
 class GroupInformation(models.Model):
@@ -24,6 +25,8 @@ class ResearchField(models.Model):
     short_description = models.TextField()
     long_description = models.TextField()
     main_image = models.ImageField(
+        upload_to='research_field_images', blank=True)
+    secondary_image = models.ImageField(
         upload_to='research_field_images', blank=True)
 
     def __str__(self):

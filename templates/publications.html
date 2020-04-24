@@ -18,65 +18,89 @@
 </header>
 
 
-<div class="container pb-5">
+<div class="container-fluid pl-5 pr-5 pb-3">
   
   {% if view.paperslists %}
-  <div class="row">
-    <h2>Refereed Full Papers</h2>
+  <div class="row text-center pb-2">
+    <div class="col">
+      <h2>Refereed Full Papers</h2>
+    </div>
   </div>
-  <div class="row">
-    <ol>
-      {% for paper in view.paperslists %}
-      <li>
-	{{ paper.authors}} <strong>{{ paper.year}}</strong>. {{ paper.title}}. <i> {{ paper.journal}}</i> {{ paper.volume}}: {{ paper.initialPage}}.
-      </li>
-      {% endfor %}
-    </ol>
+  <div class="row text-justify pb-4">
+    <div class="col-0 col-sm-0 col-md-1"></div>
+    <div class="col-md-10">
+      <ol>
+        {% for paper in view.paperslists %}
+        <li>
+          {{ paper.authors}} <strong>{{ paper.year}}</strong>. {{ paper.title}}. <i> {{ paper.journal}}</i> {{ paper.volume}}: {{ paper.initialPage}}.
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+    <div class="col-0 col-sm-0 col-md-2"></div>
   </div>
   {% endif %}
 
   {% if view.paperslists %}
-  <div class="row">
-    <h2>Reviews</h2>
+  <div class="row text-center pb-1">
+    <div class="col">
+      <h2>Reviews</h2>
+    </div>
   </div>
-  <div class="row">       
-    <ol>
-      {% for review in view.reviewslists %}
-      <li>
-	{{ review.authors}} <strong>{{ review.year}}</strong>. {{ review.title}}. <i> {{ review.journal}}</i> {{ review.volume}}: {{ review.initialPage}}.
-      </li>
-      {% endfor %}
-    </ol>    
+  <div class="row text-justify pb-4">
+    <div class="col-0 col-sm-0 col-md-1"></div>
+    <div class="col-md-10">
+      <ol>
+        {% for review in view.reviewslists %}
+        <li>
+          {{ review.authors}} <strong>{{ review.year}}</strong>. {{ review.title}}. <i> {{ review.journal}}</i> {{ review.volume}}: {{ review.initialPage}}.
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+    <div class="col-0 col-sm-0 col-md-1"></div>
   </div>
   {% endif %}
 
   {% if view.chapterslists %}
-  <div class="row">
-    <h2>Book Chapters</h2>
+  <div class="row text-center pb-2">
+    <div class="col">
+      <h2>Book Chapters</h2>
+    </div>
   </div>
-  <div class="row">       
-    <ol>
-      {% for chapter in view.chapterslists %}
-      <li>
-	{{ chapter.authors}} <strong>{{ chapter.year}}</strong>. {{ chapter.title}}. <i> {{ chapter.journal}}</i> {{ chapter.volume}}: {{ chapter.initialPage}}.
-      </li>
-      {% endfor %}
-    </ol>    
+  <div class="row text-justify pb-4">
+    <div class="col-0 col-sm-0 col-md-1"></div>
+    <div class="col-md-10">
+      <ol>
+        {% for chapter in view.chapterslists %}
+        <li>
+          {{ chapter.authors}} <strong>{{ chapter.year}}</strong>. {{ chapter.title}}. <i> {{ chapter.journal}}</i> {{ chapter.volume}}: {{ chapter.initialPage}}.
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+    <div class="col-0 col-sm-0 col-md-1"></div>
   </div>
   {% endif %}
 
   {% if view.proceedingslists %}
-  <div class="row">
-    <h2>Conference Proceedings</h2>
+  <div class="row text-center pb-2">
+    <div class="col">
+      <h2>Conference Proceedings</h2>
+    </div>
   </div>
-  <div class="row">       
-    <ol>
-      {% for proceeding in view.chapterslists %}
-      <li>
-	{{ proceeding.authors}} <strong>{{ proceeding.year}}</strong>. {{ proceeding.title}}. <i> {{ proceeding.journal}}</i> {{ proceeding.volume}}: {{ proceeding.initialPage}}.
-      </li>
-      {% endfor %}
-    </ol>    
+  <div class="row text-justify pb-4">
+    <div class="col-0 col-sm-0 col-md-1"></div>
+    <div class="col-md-10">
+      <ol>
+        {% for proceeding in view.chapterslists %}
+        <li>
+          {{ proceeding.authors}} <strong>{{ proceeding.year}}</strong>. {{ proceeding.title}}. <i> {{ proceeding.journal}}</i> {{ proceeding.volume}}: {{ proceeding.initialPage}}.
+        </li>
+        {% endfor %}
+      </ol>    
+    </div>
+    <div class="col-0 col-sm-0 col-md-1"></div>
   </div>
   {% endif %}
   
