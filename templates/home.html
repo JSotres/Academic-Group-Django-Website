@@ -5,7 +5,7 @@
 <header class="jumbotron jumbotron-fluid bg-white text-black text-center pb-0">
   <div class="container pt-5 d-flex align-items-center flex-column">
     <!-- Heading -->
-    <h1 class="display-4">{{ view.group_information_list.group_name}} {{view.group_information_list.group_def}}</h1>
+    <h1 class="display-4">{{ view.group_information_list.group_name}}</h1>
     <!-- Icon Divider -->
     <div class="row p-0">
       <div class="col"><hr class="custom-divider2"></div>
@@ -16,12 +16,27 @@
     </div>
     
     <!-- Subheading -->
-    <p class="lead">{{ view.group_information_list.PI_name }}, {{ view.group_information_list.PI_position }}</p>
-    <hr class="my-4">
-    <p>{{ view.group_information_list.group_long_description }}</p>
-    <a class="btn btn-secondary btn-lg" href="{% url 'research' %}" role="button">Learn more</a>
+    <p class="lead">{{ view.group_information_list.PI_position }}</p>
   </div>
 </header>
+
+  <div class="container-fluid">
+    <div class="row text-center">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <p>{{ view.group_information_list.group_long_description|safe }}</p>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+  <div class="container-fluid pb-4">
+    <div class="row text-center">
+      <div class="col-12">
+        <a class="btn btn-secondary btn-lg" href="{% url 'research' %}" role="button">Learn more</a>
+      </div>
+    </div>
+  </div>
+
+
 
 
 
