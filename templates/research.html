@@ -20,28 +20,30 @@
 
 
 
-<div class="container">
+<div class="container pl-5 pr-5">
 
-  <div class="row align-items-center justify-content-end mb-5">
+  <div class="row justify-content-center align-text-center mb-5">
+
 
     {% for field in object_list %}
 
-    <div class="col mb-5">
-      <div class="card text-center" style="width: 18rem;">
-	<img src="{{ field.main_image.url }}" class="card-img-top" alt="{{ field.topic }}" width="100%" height="225">
-	<div class="card-body">
-	  <h5 class="card-title">{{ field.topic }}</h5>
-	  <a href="{% url 'researchfield' field.pk %}" class="btn btn-secondary">Read more</a>
-	</div>
-      </div>
-    </div>
+    <div class="col-12 col-sm-12 col-md-6 col-lg-4 pb-5">
 
-  
+      <div class="card border-primary w-75 text-center">
+        <img src="{{ field.main_image.url }}" class="card-img-top img-fluid w-100" alt="{{ field.topic }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ field.topic }}</h5>
+          <p class="card-text">{{ field.short_description|safe }}</p>
+          <a href="{% url 'researchfield' field.pk %}" class="btn btn-secondary">Read more</a>
+        </div>
+      </div>
+
+    </div>
 
     {% endfor %}
+  <!--<</div>-->
 
-    </div>
-  
+  </div>
 </div>
   
 

@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col"><hr class="custom-divider2"></div>
       <div class="col-auto">
-	<i class="fas fa-align-justify"></i>
+        <i class="fas fa-align-justify"></i>
       </div>
       <div class="col"><hr class="custom-divider2"></div>
     </div>
@@ -18,23 +18,20 @@
 </header>
 
 <div class="container">  
-  <div class="row justify-content-md-center pb-2">
-    <h3>PI</h3>
+  <div class="row justify-content-md-center pt-4 pb-2">
+    <h3>Principal Investigator</h3>
   </div>
 
-  <div class="row justify-content-md-center">
+  <div class="row justify-content-center">
     {% for currentmember in view.currentmemberslist %}
     {% if currentmember.position == 'PI' %}    
-    <div class="col-md-auto">
-      <div class="card text-center" style="width: 14rem;">
-	<div class"row">
-	  <img src="{{ currentmember.main_image.url }}" class="card-img-top" alt="{{ currentmember.name }}" style="width: 12rem;">
-	</div>
-	
-	<div class="card-body">
-	  <h5 class="card-title">{{ currentmember.name }}</h5>
-	  <a href="{% url 'membersdetail' currentmember.pk %}" class="btn btn-secondary">Read more</a>
-	</div>
+    <div class="col-auto">
+      <div class="card text-center" style="width: 12rem;">
+        <img src="{{ currentmember.main_image.url }}" class="card-img-top" alt="{{ currentmember.name }}" >
+        <div class="card-body">
+          <h5 class="card-title">{{ currentmember.name }}</h5>
+          <a href="{% url 'membersdetail' currentmember.pk %}" class="btn btn-secondary">Read more</a>
+        </div>
       </div>
     </div>
     {% endif %}
@@ -43,21 +40,18 @@
 
 
   {% if view.currentpostdocs %}
-  <div class="row justify-content-md-center pt-4 pb-2">
-    <h3>Postdocs</h3>
+  <div class="row justify-content-center pt-4 pb-2">
+    <h3>Postdoc</h3>
   </div>
-  <div class="row justify-content-md-center">
+  <div class="row justify-content-center">
     {% for currentmember in view.currentpostdocs %}
-    <div class="col-md-auto">
-      <div class="card text-center" style="width: 14rem;">
-	<div class"row">
-	  <img src="{{ currentmember.main_image.url }}" class="card-img-top" alt="{{ currentmember.name }}" style="width: 12rem;">
-	</div>
-	
-	<div class="card-body">
-	  <h5 class="card-title">{{ currentmember.name }}</h5>
-	  <a href="{% url 'membersdetail' currentmember.pk %}" class="btn btn-secondary">Read More</a>
-	</div>
+    <div class="col-auto">
+      <div class="card text-center" style="width: 12rem;">
+        <img src="{{ currentmember.main_image.url }}" class="card-img-top" alt="{{ currentmember.name }}" >
+        <div class="card-body">
+          <h5 class="card-title">{{ currentmember.name }}</h5>
+          <a href="{% url 'membersdetail' currentmember.pk %}" class="btn btn-secondary">Read More</a>
+        </div>
       </div>
     </div>
     {% endfor %}
@@ -65,21 +59,18 @@
   {% endif %}
   
   {% if view.currentphds %}
-  <div class="row justify-content-md-center pt-4 pb-2">
-    <h3>PhD Students</h3>
+  <div class="row justify-content-center pt-4 pb-2">
+    <h3>PhD Student</h3>
   </div>
-  <div class="row justify-content-md-center">
+  <div class="row justify-content-center">
     {% for currentmember in view.currentphds %}
-    <div class="col-md-auto">
-      <div class="card text-center" style="width: 14rem;">
-	<div class"row">
-	  <img src="{{ currentmember.main_image.url }}" class="card-img-top" alt="{{ currentmember.name }}" style="width: 12rem;">
-	</div>
-	
-	<div class="card-body">
-	  <h5 class="card-title">{{ currentmember.name }}</h5>
-	  <a href="{% url 'membersdetail' currentmember.pk %}" class="btn btn-secondary">Read More</a>
-	</div>
+    <div class="col-auto">
+      <div class="card text-center" style="width: 12rem;">
+        <img src="{{ currentmember.main_image.url }}" class="card-img-top" alt="{{ currentmember.name }}" >
+        <div class="card-body">
+          <h5 class="card-title">{{ currentmember.name }}</h5>
+          <a href="{% url 'membersdetail' currentmember.pk %}" class="btn btn-secondary">Read More</a>
+        </div>
       </div>
     </div>
     {% endfor %}
@@ -87,21 +78,18 @@
   {% endif %}
 
   {% if view.currenttechnicians %}
-  <div class="row justify-content-md-center pt-4 pb-2">
+  <div class="row justify-content-center pt-4 pb-2">
     <h3>Technical Staff</h3>
   </div>
-  <div class="row justify-content-md-center">
+  <div class="row justify-content-center">
     {% for currentmember in view.currenttechnicians %}
-    <div class="col-md-auto">
-      <div class="card text-center" style="width: 14rem;">
-	<div class"row">
-	  <img src="{{ currentmember.main_image.url }}" class="card-img-top" alt="{{ currentmember.name }}" style="width: 12rem;">
-	</div>
-	
-	<div class="card-body">
-	  <h5 class="card-title">{{ currentmember.name }}</h5>
-	  <a href="{% url 'membersdetail' currentmember.pk %}" class="btn btn-secondary">Read More</a>
-	</div>
+    <div class="col-auto">
+      <div class="card text-center" style="width: 12rem;">
+        <img src="{{ currentmember.main_image.url }}" class="card-img-top" alt="{{ currentmember.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ currentmember.name }}</h5>
+          <a href="{% url 'membersdetail' currentmember.pk %}" class="btn btn-secondary">Read More</a>
+        </div>
       </div>
     </div>
     {% endfor %}
@@ -109,21 +97,18 @@
   {% endif %}
 
   {% if view.currentmasterstudents %}
-  <div class="row justify-content-md-center pt-4 pb-2">
+  <div class="row justify-content-center pt-4 pb-2">
     <h3>Master Students</h3>
   </div>
-  <div class="row justify-content-md-center">
+  <div class="row justify-content-center">
     {% for currentmember in view.currentmasterstudents %}
-    <div class="col-md-auto">
-      <div class="card text-center" style="width: 14rem;">
-	<div class"row">
-	  <img src="{{ currentmember.main_image.url }}" class="card-img-top" alt="{{ currentmember.name }}" style="width: 12rem;">
-	</div>
-	
-	<div class="card-body">
-	  <h5 class="card-title">{{ currentmember.name }}</h5>
-	  <a href="{% url 'membersdetail' currentmember.pk %}" class="btn btn-secondary">Read More</a>
-	</div>
+    <div class="col-auto">
+      <div class="card text-center" style="width: 12rem;">
+        <img src="{{ currentmember.main_image.url }}" class="card-img-top" alt="{{ currentmember.name }}" style="width: 12rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ currentmember.name }}</h5>
+          <a href="{% url 'membersdetail' currentmember.pk %}" class="btn btn-secondary">Read More</a>
+        </div>
       </div>
     </div>
     {% endfor %}
@@ -131,21 +116,18 @@
   {% endif %}
 
   {% if view.currentguestphdstudents %}
-  <div class="row justify-content-md-center pt-4 pb-2">
-    <h3>Guest PhD Students</h3>
+  <div class="row justify-content-center pt-4 pb-2">
+    <h3>Guest PhD Student</h3>
   </div>
-  <div class="row justify-content-md-center">
+  <div class="row justify-content-center">
     {% for currentmember in view.currentguestphdstudents %}
-    <div class="col-md-auto">
-      <div class="card text-center" style="width: 14rem;">
-	<div class"row">
-	  <img src="{{ currentmember.main_image.url }}" class="card-img-top" alt="{{ currentmember.name }}" style="width: 12rem;">
-	</div>
-	
-	<div class="card-body">
-	  <h5 class="card-title">{{ currentmember.name }}</h5>
-	  <a href="{% url 'membersdetail' currentmember.pk %}" class="btn btn-secondary">Read More</a>
-	</div>
+    <div class="col-auto">
+      <div class="card text-center" style="width: 12rem;">
+        <img src="{{ currentmember.main_image.url }}" class="card-img-top" alt="{{ currentmember.name }}" >
+        <div class="card-body">
+          <h5 class="card-title">{{ currentmember.name }}</h5>
+          <a href="{% url 'membersdetail' currentmember.pk %}" class="btn btn-secondary">Read More</a>
+        </div>
       </div>
     </div>
     {% endfor %}
@@ -153,21 +135,18 @@
   {% endif %}
 
   {% if view.currentgueststudents %}
-  <div class="row justify-content-md-center pt-4 pb-2">
+  <div class="row justify-content-center pt-4 pb-2">
     <h3>Guest Students</h3>
   </div>
-  <div class="row justify-content-md-center">
+  <div class="row justify-content-center">
     {% for currentmember in view.currentgueststudents %}
-    <div class="col-md-auto">
-      <div class="card text-center" style="width: 14rem;">
-	<div class"row">
-	  <img src="{{ currentmember.main_image.url }}" class="card-img-top" alt="{{ currentmember.name }}" style="width: 12rem;">
-	</div>
-	
-	<div class="card-body">
-	  <h5 class="card-title">{{ currentmember.name }}</h5>
-	  <a href="{% url 'membersdetail' currentmember.pk %}" class="btn btn-secondary">Read More</a>
-	</div>
+    <div class="col-auto">
+      <div class="card text-center" style="width: 12rem;">
+        <img src="{{ currentmember.main_image.url }}" class="card-img-top" alt="{{ currentmember.name }}" >
+        <div class="card-body">
+          <h5 class="card-title">{{ currentmember.name }}</h5>
+          <a href="{% url 'membersdetail' currentmember.pk %}" class="btn btn-secondary">Read More</a>
+        </div>
       </div>
     </div>
     {% endfor %}
