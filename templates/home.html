@@ -15,20 +15,21 @@
       <div class="col"><hr class="custom-divider2"></div>
     </div>
     
-    <!-- Subheading -->
-    <p class="lead">{{ view.group_information_list.PI_position }}</p>
+    <!-- Subheading --> 
+    <!-- <p class="lead">{{ view.group_information_list.PI_position }}</p>  --> 
+    <p class="lead">Researcher at Malmö University</p>
   </div>
 </header>
 
   <div class="container-fluid">
-    <div class="row text-center pb-2">
+    <div class="row text-center pb-4">
       <div class="col-md-2"></div>
       <div class="col-md-8">
         <p>{{ view.group_information_list.group_long_description|safe }}</p>
       <div class="col-md-2"></div>
     </div>
   </div>
-  <div class="container-fluid pb-5">
+  <div class="container-fluid pb-3">
     <div class="row text-center">
       <div class="col-12">
         <a class="btn btn-secondary btn-lg" href="{% url 'research' %}" role="button">Learn more</a>
