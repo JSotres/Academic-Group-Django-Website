@@ -29,12 +29,12 @@
 
     <div class="col-12 col-sm-12 col-md-6 col-lg-4 pb-5">
 
-      <div class="card border-primary w-75 text-center">
+      <div class="card border-secondary w-75 text-center">
         <img src="{{ field.main_image.url }}" class="card-img-top img-fluid w-100" alt="{{ field.topic }}">
         <div class="card-body">
           <h5 class="card-title">{{ field.topic }}</h5>
           <p class="card-text">{{ field.short_description|safe }}</p>
-          <a href="{% url 'researchfield' field.pk %}" class="btn btn-secondary">Read more</a>
+          <a href="{% url 'researchfield' field.pk %}" class="btn btn-ligth btn-outline-secondary">Read more</a>
         </div>
       </div>
 
